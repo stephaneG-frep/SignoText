@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/sign_model.dart';
 import '../data/signs_data.dart';
-import '../widgets/sign_illustration.dart';
+import '../widgets/sign_video_player.dart';
 
 /// Écran de détail d'un signe LSF
 class SignDetailScreen extends StatelessWidget {
@@ -32,8 +32,8 @@ class SignDetailScreen extends StatelessWidget {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  // Illustration pleine largeur (dessin ou asset)
-                  SignIllustration(sign: sign, height: 240),
+                  // Vidéo LSF Wikimedia ou dessin de main en fallback
+                  SignVideoPlayer(sign: sign, height: 240),
                   // Dégradé bas → nom du signe lisible
                   Positioned(
                     bottom: 0,

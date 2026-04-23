@@ -150,10 +150,14 @@ class SignCardVertical extends StatelessWidget {
         ),
         child: Row(
           children: [
-            // Miniature illustration
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: SignIllustration(sign: sign, height: 56),
+            // Miniature illustration — largeur fixe obligatoire dans un Row
+            SizedBox(
+              width: 56,
+              height: 56,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: SignIllustration(sign: sign, height: 56),
+              ),
             ),
             const SizedBox(width: 14),
             Expanded(
